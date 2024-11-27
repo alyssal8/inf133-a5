@@ -1,0 +1,201 @@
+/* Calendar Controls */
+#calendar-controls {
+    margin-bottom: 20px;
+}
+
+#calendar-controls button {
+    margin: 0 10px;
+}
+
+#current-month-year {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Calendar Grid */
+#calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+}
+
+.calendar-day {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    min-height: 100px;
+    position: relative;
+    padding: 5px;
+}
+
+.calendar-day .date {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+.calendar-day .events {
+    margin-top: 20px;
+    max-height: 75px;
+    overflow-y: auto;
+}
+
+.calendar-day .event {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.calendar-day .event.academic {
+    background-color: #5cb85c;
+}
+
+.calendar-day .event.personal {
+    background-color: #f0ad4e;
+}
+
+.calendar-day .event.extracurricular {
+    background-color: #d9534f;
+}
+
+/* Today's Highlights */
+.calendar-day.today {
+    border: 2px solid #337ab7;
+}
+
+/* Empty Days */
+.calendar-day.empty {
+    background-color: #f9f9f9;
+    border: none;
+}
+
+/* Day Headers */
+#weekday-headers {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 5px;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 0;
+    background-color: #e7e7e7;
+    border: 1px solid #ddd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    #calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #weekday-headers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #calendar-controls button {
+        margin: 5px 0;
+    }
+}
+
+/* Events Tooltips */
+.calendar-day .event:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    white-space: normal;
+    width: 150px;
+    z-index: 10;
+}
+
+/* Too Many Events */
+.calendar-day .events {
+    max-height: 75px;
+    overflow-y: auto;
+}
+
+/* Style Scrollbar */
+.calendar-day .events::-webkit-scrollbar {
+    width: 6px;
+}
+
+.calendar-day .events::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+/* Event Details Modal */
+#event-modal {
+    display: none; /* Will be displayed when needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+#event-modal .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+#event-modal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#event-modal .close-btn:hover {
+    color: #333;
+}
+
+/* Event Form */
+#event-form .form-group {
+    margin-bottom: 15px;
+}
+
+#event-form label {
+    font-weight: bold;
+}
+
+#event-form input[type="text"],
+#event-form input[type="date"],
+#event-form input[type="time"],
+#event-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Modal Buttons */
+#event-modal .modal-footer {
+    text-align: right;
+}
+
+#event-modal .modal-footer .btn {
+    margin-left: 10px;
+}
