@@ -6,37 +6,44 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="src/styles/tasks.css">
     <title>Tasks</title>
     </head>
     
     <body>
-        <div class="task-form">
+        <!-- Form for adding tasks -->
+        <form id="task-form">
             <h1>Tasks</h1>
             <label>Name
-                <input type="text" id="taskName" required/>
+                <input type="text" id="taskName" name="taskName" required/>
             </label>
             <label>Description
-                <textarea id="taskDescription"></textarea>
+                <textarea id="taskDescription" name="taskDescription"></textarea>
             </label>
             <label>Priority
-                <select id="taskPriority">
+                <select id="taskPriority" name="taskPriority">
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>
                 </select>
             </label>
             <label>Category
-                <select id="taskCategory">
+                <select id="taskCategory" name="taskCategory">
                     <option value="Personal">Personal</option>
                     <option value="Academic">Academic</option>
                     <option value="Extracurricular">Extracurricular</option>
                 </select>
             </label>
             <label>Date & Time
-                <input type="datetime-local" id="taskDateTime"/>
+                <input type="datetime-local" id="taskDateTime"  name="taskDateTime"/>
                 </label>
-            <button id="addTaskBtn">Add Task</button>
+            <button type="submit" id="addTaskBtn">Add Task</button>
+        </form>
+
+        <!-- List for displaying tasks -->
+        <div id="task-list">
         </div>
+    
+        <script src="src/tasks.js"></script>
     </body>
 </html>

@@ -10,7 +10,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.task-form {
+#task-form {
     background-color: white;
     box-shadow: 0 4px 8px darkgray;
     width: 300px;
@@ -19,11 +19,12 @@ h1 {
     border-radius: 8px;
     margin-top: 50px;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 
-.task-form input,
-.task-form textarea,
-.task-form select {
+#task-form input,
+#task-form textarea,
+#task-form select {
     font-weight: lighter;
     width: 100%;
     padding: 8px;
@@ -32,13 +33,24 @@ h1 {
     margin-bottom: 10px;
 }
 
-.task-form textarea {
+#task-form textarea {
     resize: vertical;
 }
 
-.task-form #addTaskBtn {
+#task-form #addTaskBtn {
     background-color: whitesmoke;
     padding: 8px;
     border: 1px solid lightgray;
     border-radius: 8px;
+}
+
+#task-list {
+    background-color: white;
+    box-shadow: 0 4px 8px darkgray;
+    width: 1000px;
+    padding: 30px;
+    border: 50px;
+    border-radius: 8px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
