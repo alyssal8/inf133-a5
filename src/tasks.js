@@ -55,7 +55,7 @@ function deleteTask(index) {
 
     // If the task being deleted was also being edited,
     // clear the form and cancel the edit
-    if (selectedIndex = index) {
+    if (selectedIndex == index) {
         selectedIndex = null;
         taskForm[0].reset();
         cancelUpdate();
@@ -100,5 +100,29 @@ function displayTasks() {
     });
 }
 
+function updateClock() {
+    const clock = $("#clock");
+    const now = new Date();
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    const date = now.toLocaleDateString("en-US", options);
+    const time = now.toLocaleTimeString("en-US", { hour12: true });
+
+    clock.html(`${date} | ${time}`);
+}
+
+function updateWeather() {
+    const weather = $("#weather");
+    // Uses the Open-Meteo API to retrieve the temperature
+    const url = "https://api.open-meteo.com/v1/forecast?latitude=33.6695&longitude=-117.8231&hourly=temperature_2m&temperature_unit=fahrenheit&wind_speed_unit=ms&precipitation_unit=inch&timezone=America%2FLos_Angeles&forecast_hours=1";
+    $.getJSON(url, function (data) {
+        weather.html(`${data.hourly.temperature_2m[0]}°F`);
+    });
+}
+
 taskForm.on('submit', addUpdateTask);
 $("#cancelBtn").on('click', cancelUpdate);
+
+// Clock updates every second
+setInterval(updateClock, 1000);
+$(document).ready(updateClock);
+$(document).ready(updateWeather);

@@ -92,3 +92,33 @@ button:hover {
     color: white;
     border:none;
 }
+
+#clockAndWeather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    z-index: 1000;
+}
+
+#clock {
+    background-color: white;
+    box-shadow: 0 4px 8px darkgray;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#weather {
+    background-color: white;
+    box-shadow: 0 4px 8px darkgray;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+}
