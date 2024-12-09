@@ -37,7 +37,9 @@
             <label>Date & Time
                 <input type="datetime-local" id="taskDateTime"  name="taskDateTime"/>
                 </label>
-            <button type="submit" id="addTaskBtn">Add Task</button>
+            <!-- Button either adds a new task or updates an existing task -->
+            <button type="submit" id="addUpdateTaskBtn">Add Task</button>
+            <button type="button" id="cancelBtn" style="display:none;">X</button>
         </form>
 
         <!-- List for displaying tasks -->
