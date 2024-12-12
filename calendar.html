@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="tasks.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="event-form">
+                    <h2>Add Event</h2>
+                    <label for="eventName">Event Name:</label>
+                    <input type="text" id="eventName" name="eventName" required><br><br>
+
+                    <label for="eventDate">Date:</label>
+                    <input type="date" id="eventDate" name="eventDate" required><br><br>
+
+                    <label for="eventTime">Time:</label>
+                    <input type="time" id="eventTime" name="eventTime"><br><br>
+
+                    <label for="eventCategory">Category:</label>
+                    <select id="eventCategory" name="eventCategory">
+                        <option value="Personal">Personal</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Extracurricular">Extracurricular</option>
+                    </select><br><br>
+
+                    <button type="submit" id="addEventBtn">Add Event</button>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div id="clockAndWeather">
+                    <div id="clock"></div>
+                    <div id="weather"></div>
+                </div>
+
+                <h1>Calendar</h1>
+
+                <div class="calendar-controls">
+                    <button class="prev-year"><< Year</button>
+                    <button class="prev-month">< Month</button>
+                    <span class="current-month-year"></span>
+                    <button class="next-month">Month ></button>
+                    <button class="next-year">Year >></button>
+                </div>
+
+                <div id="calendar-display">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calendar.js"></script>
+
+</body>
+</html>
