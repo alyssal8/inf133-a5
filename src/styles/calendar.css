@@ -30,7 +30,7 @@
 }
 
 .calendar-table th, .calendar-table td {
-    border: 1px solid #ccc;
+    border: 1px solid black;
     padding: 10px;
     text-align: center;
 }
@@ -63,4 +63,42 @@
 .event.extracurricular {
     background-color: #fff0f5;
     color: #ff0000;
+}
+
+.legend {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.legend.personal {
+    background-color: #f0f8ff;
+    border: 1px solid #0000ff;
+}
+
+.legend.academic {
+    background-color: #e6ffe6;
+    border: 1px solid #008000;
+}
+
+.legend.extracurricular {
+    background-color: #fff0f5;
+    border: 1px solid #ff0000;
+}
+
+#confirmationMessage {
+    font-weight: bold;
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
 }
