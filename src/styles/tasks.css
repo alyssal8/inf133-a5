@@ -85,12 +85,15 @@ button:hover {
     background-color: lightskyblue;
     color: white;
     border:none;
+    margin-top: 5px;
+    margin-right: 2px;
 }
 
 .deleteTaskBtn {
     background-color: lightcoral;
     color: white;
     border:none;
+    margin-top: 5px;
 }
 
 #clockAndWeather {
@@ -100,7 +103,6 @@ button:hover {
     position: fixed;
     top: 10px;
     width: 100%;
-    z-index: 1000;
 }
 
 #clock {
@@ -121,4 +123,14 @@ button:hover {
     margin: 5px;
     font-size: 18px;
     text-align: center;
+}
+
+.speechBtn {
+    background-color: white;
+    border: none;
+    padding: 0px;
+}
+
+.speechBtn:hover {
+    background-color: white;
 }

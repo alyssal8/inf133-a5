@@ -3,6 +3,12 @@ let taskList = $("#task-list");
 let tasks = [];
 let selectedIndex;
 
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.lang = "en-US";
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
 function addUpdateTask(event) {
     event.preventDefault();
     // Convert the task form data into a JSON object
@@ -119,6 +125,32 @@ function updateWeather() {
     });
 }
 
+function textToSpeech () {
+    // Uses the Web Speech API for text to speech
+    // Find the target for text to speech
+    const target = $("#" + $(this).data("target"));
+
+    // Start listening
+    recognition.start();
+    $("#speechStatus").html("<br>Listening...");
+
+    // Handle result
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        // Checks if the target already has text
+        if (target.val()) {
+            target.val(target.val() + " " + transcript);
+        } else {
+            target.val(transcript);
+        }
+    };
+
+    // Stop listening
+    recognition.onend = function () {
+        $("#speechStatus").empty();
+    };
+}
+
 taskForm.on('submit', addUpdateTask);
 $("#cancelBtn").on('click', cancelUpdate);
 
@@ -126,3 +158,5 @@ $("#cancelBtn").on('click', cancelUpdate);
 setInterval(updateClock, 1000);
 $(document).ready(updateClock);
 $(document).ready(updateWeather);
+
+$(".speechBtn").on('click', textToSpeech);
