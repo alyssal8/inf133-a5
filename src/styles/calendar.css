@@ -1,28 +1,24 @@
-.calendar {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: lightgray;
-    padding: 20px;
-    box-shadow: 0 0 10px gray;
+.container {
+    margin-top: 20px;
 }
 
 .calendar-controls {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .calendar-controls button {
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 5px 10px;
+    font-size: 14px;
     margin: 0 5px;
     border: none;
-    background-color: white;
+    background-color: #f0f0f0;
+    border-radius: 3px;
     cursor: pointer;
 }
 
 .current-month-year {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     display: inline-block;
     margin: 0 10px;
@@ -35,55 +31,36 @@
 
 .calendar-table th, .calendar-table td {
     border: 1px solid #ccc;
-    width: 14%;
-    height: 100px;
-    vertical-align: top;
-    padding: 5px;
-    background-color: white;
+    padding: 10px;
+    text-align: center;
 }
 
 .calendar-table th {
-    background-color: #e0e0e0;
-    text-align: center;
-    font-weight: bold;
+    background-color: #f2f2f2;
 }
 
 .calendar-table td {
-    position: relative;
+    height: 70px;
 }
 
-.calendar-day .date-number {
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-}
-
-.calendar-day .event {
-    background-color: #d9edf7;
-    color: #31708f;
-    padding: 5px;
-    margin-top: 25px;
-    border-radius: 4px;
+.event {
+    margin-top: 5px;
+    padding: 3px 5px;
+    border-radius: 3px;
     font-size: 12px;
 }
 
-.calendar-day .event.personal {
-    background-color: #fcf8e3;
-    color: #8a6d3b;
+.event.personal {
+    background-color: #f0f8ff;
+    color: #0000ff;
 }
 
-.calendar-day .event.academic {
-    background-color: #dff0d8;
-    color: #3c763d;
+.event.academic {
+    background-color: #e6ffe6;
+    color: #008000;
 }
 
-.calendar-day .event.extracurricular {
-    background-color: #f2dede;
-    color: #a94442;
-}
-
-.calendar-table td.today {
-    border: 2px solid #337ab7;
+.event.extracurricular {
+    background-color: #fff0f5;
+    color: #ff0000;
 }
