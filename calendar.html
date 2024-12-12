@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="calendar.css">
-    <link rel="stylesheet" href="notes.css">
-    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="src/styles/calendar.css">
+    <link rel="stylesheet" href="src/styles/notes.css">
+    <link rel="stylesheet" href="src/styles/tasks.css">
 </head>
 <body>
 
     <div class="container">
         <div class="row">
+            <!-- Add Event Form -->
             <div class="col-md-4">
                 <div id="event-form">
                     <h2>Add Event</h2>
@@ -33,13 +34,27 @@
                     </select><br><br>
 
                     <button type="submit" id="addEventBtn">Add Event</button>
+
+                    <div id="confirmationMessage" style="display: none; color: green; font-size: 14px; margin-top: 10px;">
+                        Event successfully added!
+                    </div>
+                </div>
+
+                <!-- Color Code -->
+                <div id="eventLegend" style="margin-top: 20px;">
+                    <h3>Legend:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><span class="legend personal"></span> Personal</li>
+                        <li><span class="legend academic"></span> Academic</li>
+                        <li><span class="legend extracurricular"></span> Extracurricular</li>
+                    </ul>
                 </div>
             </div>
 
+            <!-- Calendar and Clock -->
             <div class="col-md-8">
-                <div id="clockAndWeather">
+                <div id="clockContainer">
                     <div id="clock"></div>
-                    <div id="weather"></div>
                 </div>
 
                 <h1>Calendar</h1>
@@ -68,11 +83,14 @@
                         <tbody></tbody>
                     </table>
                 </div>
+
+                <!-- Delete Event -->
+                <button id="deleteEventBtn" style="display: none; margin-top: 10px;" class="btn btn-danger">Delete Selected Event</button>
             </div>
         </div>
     </div>
 
-    <script src="calendar.js"></script>
+    <script src="src/calendar.js"></script>
 
 </body>
 </html>
