@@ -17,54 +17,56 @@
             <div id="weather"></div>
         </div>
 
-        <!-- Form for adding tasks -->
-        <form id="task-form">
-            <h1>Tasks</h1>
-            <label>Name
-                <button type="button" class="speechBtn" data-target="taskName">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
-                        <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
-                        <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
-                      </svg>
-                </button>
-                <input type="text" id="taskName" name="taskName" required/>
-            </label>
-            <label>Description
-                <button type="button" class="speechBtn" data-target="taskDescription">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
-                        <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
-                        <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
-                      </svg>
-                </button>
-                <textarea id="taskDescription" name="taskDescription"></textarea>
-            </label>
-            <label>Priority
-                <select id="taskPriority" name="taskPriority">
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                </select>
-            </label>
-            <label>Category
-                <select id="taskCategory" name="taskCategory">
-                    <option value="Personal">Personal</option>
-                    <option value="Academic">Academic</option>
-                    <option value="Extracurricular">Extracurricular</option>
-                </select>
-            </label>
-            <label>Date & Time
-                <input type="datetime-local" id="taskDateTime"  name="taskDateTime"/>
+        <div id="task-container">
+            <!-- Form for adding tasks -->
+            <form id="task-form">
+                <h1>Tasks</h1>
+                <label>Name
+                    <button type="button" class="speechBtn" data-target="taskName">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
+                        </svg>
+                    </button>
+                    <input type="text" id="taskName" name="taskName" required/>
                 </label>
-            <!-- Button either adds a new task or updates an existing task -->
-            <button type="submit" id="addUpdateTaskBtn">Add Task</button>
-            <button type="button" id="cancelBtn" style="display:none;">X</button>
+                <label>Description
+                    <button type="button" class="speechBtn" data-target="taskDescription">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
+                        </svg>
+                    </button>
+                    <textarea id="taskDescription" name="taskDescription"></textarea>
+                </label>
+                <label>Priority
+                    <select id="taskPriority" name="taskPriority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </label>
+                <label>Category
+                    <select id="taskCategory" name="taskCategory">
+                        <option value="Personal">Personal</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Extracurricular">Extracurricular</option>
+                    </select>
+                </label>
+                <label>Date & Time
+                    <input type="datetime-local" id="taskDateTime"  name="taskDateTime"/>
+                    </label>
+                <!-- Button either adds a new task or updates an existing task -->
+                <button type="submit" id="addUpdateTaskBtn">Add Task</button>
+                <button type="button" id="cancelBtn" style="display:none;">X</button>
 
-            <div id="speechStatus"></div>
-        </form>
+                <div id="speechStatus"></div>
+            </form>
 
-        <!-- List for displaying tasks -->
-        <div id="task-list"></div>
-    
+            <!-- List for displaying tasks -->
+            <div id="task-list"></div>
+        </div>
+        
         <script src="src/tasks.js"></script>
     </body>
 </html>

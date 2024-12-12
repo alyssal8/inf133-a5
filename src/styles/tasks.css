@@ -10,6 +10,22 @@ h1 {
     margin-bottom: 20px;
 }
 
+#task-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* On smaller screens, the task list will appear below the task form */
+@media (max-width: 768px) {
+    #task-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 #task-form {
     background-color: white;
     box-shadow: 0 4px 8px darkgray;
@@ -52,12 +68,13 @@ button:hover {
 #task-list {
     background-color: white;
     box-shadow: 0 4px 8px darkgray;
-    width: 1000px;
+    min-width: 1000px;
     padding: 30px;
     border: 50px;
     border-radius: 8px;
     margin-top: 50px;
     margin-bottom: 20px;
+    min-height: 300px;
 }
 
 .task {

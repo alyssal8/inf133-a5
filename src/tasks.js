@@ -28,6 +28,7 @@ function addUpdateTask(event) {
     }
 
     displayTasks();
+    saveTasks();
 }
 
 function cancelUpdate() {
@@ -68,6 +69,8 @@ function deleteTask(index) {
     } else {
         displayTasks();
     }
+    
+    saveTasks();
 }
 
 function displayTasks() {
@@ -104,6 +107,19 @@ function displayTasks() {
     $(".deleteTaskBtn").on('click', function () {
         deleteTask($(this).data("index"));
     });
+}
+
+// Functions for storing tasks in local storage
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+        tasks = JSON.parse(savedTasks);
+        displayTasks();
+    }
 }
 
 function updateClock() {
@@ -158,5 +174,6 @@ $("#cancelBtn").on('click', cancelUpdate);
 setInterval(updateClock, 1000);
 $(document).ready(updateClock);
 $(document).ready(updateWeather);
+$(document).ready(loadTasks);
 
 $(".speechBtn").on('click', textToSpeech);
